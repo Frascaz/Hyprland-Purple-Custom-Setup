@@ -1,0 +1,102 @@
+@define-color background rgba(10, 8, 20, 0.85);
+@define-color text #C8C3FF;
+@define-color accent1 #6A00FF;  /* viola neon */
+@define-color accent2 #00D9FF;  /* azzurro elettrico */
+
+window {
+  border-radius: 14px;
+  border: 2px solid transparent;
+  background-color: @background;
+  color: @text;
+  padding: 8px;
+  background-clip: padding-box;
+  margin: 0;
+  box-shadow: 0 0 20px rgba(0, 217, 255, 0.5),
+              0 0 40px rgba(106, 0, 255, 0.25);
+  animation: glowPulse 3s infinite ease-in-out;
+}
+
+/* Glow animato cyberpunk */
+@keyframes glowPulse {
+  0% {
+    box-shadow: 0 0 10px rgba(106, 0, 255, 0.3), 
+                0 0 20px rgba(0, 217, 255, 0.4),
+                inset 0 0 12px rgba(106, 0, 255, 0.15);
+    border-color: rgba(170, 0, 255, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 25px rgba(106, 0, 255, 0.8),
+                0 0 45px rgba(0, 217, 255, 0.8),
+                inset 0 0 20px rgba(106, 0, 255, 0.25);
+    border-color: rgba(106, 0, 255, 0.8);
+  }
+  100% {
+    box-shadow: 0 0 10px rgba(106, 0, 255, 0.3),
+                0 0 20px rgba(0, 217, 255, 0.4),
+                inset 0 0 12px rgba(106, 0, 255, 0.15);;
+    border-color: rgba(170, 0, 255, 0.5);
+    border-radius: 14px;
+  }
+}
+
+@keyframes glowPulseText {
+  0% {
+    text-shadow: 0 0 4px @accent2, 0 0 8px @accent2;
+  }
+
+  50% {
+    text-shadow: 0 0 12px @accent2, 0 0 24px @accent2, 0 0 36px @accent2;
+  }
+
+  100% {
+    text-shadow: 0 0 4px @accent2, 0 0 8px @accent2;
+  }
+}
+
+/* Testo e selezione */
+#input {
+  border: none;
+  background: transparent;
+  color: @text;
+  padding: 8px 10px;
+  font-size: 16px;
+  caret-color: @accent1
+}
+
+#entry {
+  padding: 6px 10px;
+  border-radius: 8px;
+  background: transparent;
+  color: @text
+}
+
+#entry:selected {
+  background: linear-gradient(90deg, rgba(166, 0, 255, 0.3), rgba(0, 128, 255, 0.3));
+  color: #FFFFFF;
+  /* text-shadow: 0 0 5px @accent2; */
+  box-shadow: 0 0 8px rgba(0, 217, 255, 0.4);
+  transition: all 0.2s ease-in-out;
+  animation: glowPulseText 2s infinite ease-in-out
+}
+
+/* Titolo e prompt */
+#prompt {
+  color: @accent1;
+  font-weight: bold;
+  text-shadow: 0 0 10px @accent2;
+}
+
+#scroll {
+  border-radius: 10px;
+}
+
+/* Scrollbar minimale */
+scrollbar, scrollbar slider {
+  background: transparent;
+  min-width: 8px;
+}
+
+scrollbar slider {
+  background-color: rgba(0, 217, 255, 0.3);
+  border-radius: 4px;
+}

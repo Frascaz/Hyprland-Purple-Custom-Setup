@@ -1,0 +1,397 @@
+/* colors defined at top for easy configuring */
+@define-color background #2C2A24;
+@define-color second-background #7200c9;
+@define-color transparent rgba(46, 3, 79, 0);
+@define-color text #DDD5C4;
+@define-color borders #7200c9;
+@define-color focused #7200c9;
+@define-color focused2 #BFAA80;
+@define-color color1 #7699A3;
+@define-color color2 #8D7AAE;
+@define-color color3 #78997A;
+@define-color battery #19B52C;
+@define-color bluetooth #0987C1;
+@define-color powerman #D7790F;
+@define-color urgent #E50000;
+@define-color gold #FFD700;
+
+
+/* font declared */
+* {
+  font-family: "Iosevka Nerd Font";
+  font-size: 15px
+}
+
+#custom-openbracket,
+#custom-closebracket {
+  margin: 0 5px;
+  color: @text
+}
+
+
+/* idk what all this does */
+window#waybar {
+  background-color: @transparent;
+  border-bottom: 0;
+  color: @text;
+  transition: background-color 0.5s
+}
+
+window#waybar.hidden {
+  opacity: 0.2
+}
+
+window#waybar.empty #window {
+  background-color: transparent
+}
+
+
+/* configuring the modules */
+.modules-left {
+  margin: 10px 0 0 10px;
+  padding: 0 0 0 7px;
+  background-color: @transparent
+}
+
+.modules-center {
+  margin: 10px 0 0 0;
+  padding: 0 10px 0 10px;
+  background-color: @transparent
+}
+
+.modules-right {
+  margin: 10px 10px 0 0;
+  padding: 0 10px 0 10px;
+  background-color: @transparent
+}
+
+
+/* whats this?? */
+button {
+  border: none
+}
+
+
+/* left island */
+
+/* menu pannel */
+#custom-arch,
+#custom-powerprofile,
+#custom-themeswitcher {
+  padding-right: 10px;
+  padding-left: 5px;
+  font-size: 15px;
+  border-radius: 8px;
+  transition: color 0.5s ease-in-out
+}
+
+#custom-arch:hover {
+  color: #00dff4;
+  animation: glowPulseText 2s infinite ease-in-out
+}
+
+#custom-powerprofile:hover {
+  color: @powerman;
+  animation: glowPulseText 2s infinite ease-in-out
+}
+
+/* #custom-themeswitcher:hover {
+  color: @color1;
+}
+ */
+/* workspace pannel */
+#workspaces button {
+  min-width: 0;
+  padding: 0 8px 0 8px;
+  background-color: @transparent;
+  color: @text;
+  border-radius: 50;
+  transition: color 0.5s ease-in-out
+}
+
+#workspaces button:hover {
+  color: gray;
+  background-color: @transparent;
+  animation: glowPulse 1.8s infinite ease-in-out
+}
+
+#workspaces button.active {
+  color: rgba(0, 217, 255, 0.8);
+  background-color: @transparent;
+  animation: blink 1s infinite alternate
+}
+
+#workspaces button.urgent {
+  color: @urgent;
+  animation: glowPulseUrgent 1.8s infinite ease-in-out
+}
+#custom-mako {
+  padding: 0 10px 0 5px; 
+  font-size: 16px;
+  /* same scale as other icons */
+  color: @text;
+  transition: color 0.5s ease-in-out
+}
+
+#custom-mako.urgent,
+#custom-mako:hover {
+  color: @gold;
+  animation: glowPulseText 2s infinite ease-in-out
+}
+
+
+/* no idea what this does */
+.modules-left>widget:first-child>#workspaces {
+  margin-left: 0
+}
+
+.modules-right>widget:last-child>#workspaces {
+  margin-right: 0
+}
+
+/* media player */
+#mpris {
+  margin: 0 0 0 5px;
+  padding: 0 9px;
+  background-color: @transparent;
+  color: @text;
+  transition: color 0.5s ease-in-out
+}
+
+#mpris.playing {
+  background-color: @transparent;
+  border-radius: 2px;
+  color:  #00d9ff; /* azzurro neon */
+  animation: glowPulseTextCyb 4.5s ease-in-out infinite;
+}
+
+/* center module  */
+#window {
+  padding: 0 5px;
+  animation: glowPulseText 2s infinite ease-in-out
+}
+
+
+
+
+/* Right Island */
+
+/* module general styles */
+#clock,
+#battery,
+#custom-clipboard,
+#custom-bluetooth,
+#network {
+  padding: 0 10px;
+  transition: color 0.5s ease-in-out
+}
+
+#cpu,
+#memory {
+  padding: 0 10px;
+}
+
+#clock:hover {
+  color: #D0BE20;
+  animation: glowPulseText 2s infinite ease-in-out
+}
+
+#battery:hover {
+  color: @battery;
+  animation: glowPulseText 2s infinite ease-in-out
+}
+
+#custom-clipboard:hover {
+  color: #C0007B
+}
+
+#custom-bluetooth:hover {
+  color: @bluetooth;
+  animation: glowPulseText 2s infinite ease-in-out
+}
+
+#network:hover {
+  color: chartreuse;
+  animation: glowPulseText 2s infinite ease-in-out
+}
+
+#idle_inhibitor:hover,
+#backlight:hover,
+#wireplumber:hover {
+  color: #fb9004;
+  animation: glowPulseText 2s infinite ease-in-out
+}
+
+#idle_inhibitor {
+  padding: 0 10px 0 0
+}
+
+#custom-powerprofile {
+  padding: 0 8px 0 4px
+}
+
+/* Remaining Modules */
+#backlight,
+#wireplumber {
+  padding: 0 5px
+}
+
+#cpuram,
+#cpuram #custom-openbracket,
+#cpuram #custom-closebracket{
+  color: transparent;
+  transition: color 0.5s ease-in-out;
+}
+
+#cpuram:hover,
+#cpuram:hover #custom-openbracket,
+#cpuram:hover #custom-closebracket
+{
+  color: #ff0090;
+  animation: glowPulseText 2s infinite ease-in-out ;
+}
+
+
+#wireplumber.muted {
+  color: #565755
+}
+
+
+#battery.charging {
+  color: @text
+}
+
+#battery.threequarters:hover {
+  color: #3dcc2b;
+  animation: glowPulseText 2s infinite ease-in-out
+}
+
+#battery.medium:hover {
+  color: #83ea1c;
+  animation: glowPulseText 2s infinite ease-in-out
+}
+
+#battery.charging:hover {
+  color: #D0BE20;
+  background-color: @transparent;
+  animation: glowPulseText 2s infinite ease-in-out
+}
+
+#battery.plugged {
+  color: @text
+}
+#battery.warning:not(.charging){
+  color: #f2ff00;
+  background-color: @transparent;
+  animation: glowPulseText 2s infinite ease-in-out
+}
+
+#battery.critical:not(.charging) {
+  color: @urgent;
+  background-color: @transparent;
+  animation: glowPulseText 2s infinite ease-in-out
+}
+
+@keyframes blink {
+  to {
+    background-color: @transparent;
+    color: @text;
+    text-shadow: 0 0 12px currentColor, 0 0 24px currentColor, 0 0 36px currentColor
+  }
+}
+
+@keyframes blink2 {
+  to {
+    background-color: @transparent;
+    color: @focused
+  }
+}
+
+/* ========== ANIMAZIONE GLOW ========== */
+@keyframes glowPulse {
+  0% {
+    text-shadow: 0 0 2px @focused;
+    box-shadow: 0 0 0px @focused
+  }
+
+  50% {
+    text-shadow: 0 0 10px @focused, 0 0 20px @focused;
+    box-shadow: 0 0 10px @focused, 0 0 20px @focused
+  }
+
+  100% {
+    text-shadow: 0 0 2px @focused;
+    box-shadow: 0 0 0px @focused
+  }
+}
+
+@keyframes glowPulseUrgent {
+  0% {
+    text-shadow: 0 0 2px @urgent;
+    box-shadow: 0 0 0px @urgent
+  }
+
+  50% {
+    text-shadow: 0 0 10px @urgent, 0 0 20px @urgent;
+    box-shadow: 0 0 10px @urgent, 0 0 20px @urgent
+  }
+
+  100% {
+    text-shadow: 0 0 2px @urgent;
+    box-shadow: 0 0 0px @urgent
+  }
+}
+
+@keyframes glowPulseText {
+  0% {
+    text-shadow: 0 0 4px currentColor, 0 0 8px currentColor;
+  }
+
+  50% {
+    text-shadow: 0 0 12px currentColor, 0 0 24px currentColor, 0 0 36px currentColor;
+  }
+
+  100% {
+    text-shadow: 0 0 4px currentColor, 0 0 8px currentColor;
+  }
+}
+
+@keyframes glowPulseTextCyb {
+  0% {
+    color: #00d9ff;
+    text-shadow: 0 0 4px currentColor, 0 0 8px currentColor;
+  }
+
+  50% {
+    color: #00ff04;
+    text-shadow: 0 0 12px currentColor, 0 0 24px currentColor, 0 0 36px currentColor;
+  }
+
+  100% {
+    color: #00d9ff;
+    text-shadow: 0 0 4px currentColor, 0 0 8px currentColor;
+  }
+}
+
+/* === Animazione pulsante neon === */
+@keyframes glowPulseCyber {
+  0% {
+    box-shadow: 0 0 8px rgba(106, 0, 255, 0.3),
+                0 0 15px rgba(0, 217, 255, 0.4);
+    border-color: rgba(170, 0, 255, 0.4);
+    color: #00d9ff;
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(106, 0, 255, 0.8),
+                0 0 40px rgba(0, 217, 255, 0.8);
+    border-color: rgba(106, 0, 255, 0.8);
+    color: #aa00ff;
+  }
+  100% {
+    box-shadow: 0 0 8px rgba(106, 0, 255, 0.3),
+                0 0 15px rgba(0, 217, 255, 0.4);
+    border-color: rgba(170, 0, 255, 0.4);
+    color: #00d9ff;
+  }
+}
+

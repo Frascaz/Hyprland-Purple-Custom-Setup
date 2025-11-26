@@ -1,0 +1,80 @@
+@define-color focused #7200c9;
+
+* {
+	background-image: none;
+	box-shadow: none;
+    font-family: "Iosevka Nerd Font";  
+}
+window {
+    background-position: 910px;
+    background-size: 240px;
+	background-color: rgba(54, 54, 54, 0.699);
+    background-image: url("/home/barbasmith/Pictures/Telegram Desktop/Fraschini.png");
+    background-repeat: no-repeat;
+}
+
+button {
+    border-radius: 12px;
+    border-color: black;
+	text-decoration-color: #FFFFFF;
+    color: #FFFFFF;
+	background-color: rgb(26, 25, 25);
+	border-style: unset;
+	border-width: 1px;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 25%;
+}
+
+button:focus, button:active, button:hover{	
+	background-color:rgba(43, 2, 59, 0.507);
+	outline-style: none;
+    animation: glowPulseCyber 1.8s infinite ease-in-out
+} 
+
+#lock {
+    background-image: image(url("/usr/share/wlogout/icons/lock.png"), url("/usr/local/share/wlogout/icons/lock.png"));
+}
+
+#logout {
+    background-image: image(url("/usr/share/wlogout/icons/logout.png"), url("/usr/local/share/wlogout/icons/logout.png"));
+}
+
+#suspend {
+    background-image: image(url("/usr/share/wlogout/icons/suspend.png"), url("/usr/local/share/wlogout/icons/suspend.png"));
+}
+
+#hibernate {
+    background-image: image(url("/usr/share/wlogout/icons/hibernate.png"), url("/usr/local/share/wlogout/icons/hibernate.png"));
+}
+
+#shutdown {
+    background-image: image(url("/usr/share/wlogout/icons/shutdown.png"), url("/usr/local/share/wlogout/icons/shutdown.png"));
+}
+
+#reboot {
+    background-image: image(url("/usr/share/wlogout/icons/reboot.png"), url("/usr/local/share/wlogout/icons/reboot.png"));
+}
+
+/* === Animazione pulsante neon === */
+@keyframes glowPulseCyber {
+  0% {
+    box-shadow: 0 0 8px rgba(106, 0, 255, 0.3),
+                0 0 15px rgba(100, 0, 158, 0.4);
+    border-color: rgba(170, 0, 255, 0.4);
+    color: #00d9ff;
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(106, 0, 255, 0.8),
+                0 0 40px rgba(162, 0, 255, 0.4);
+    border-color: rgba(106, 0, 255, 0.8);
+    color: #aa00ff;
+  }
+  100% {
+    box-shadow: 0 0 8px rgba(106, 0, 255, 0.3),
+                0 0 15px rgba(100, 0, 158, 0.4);
+    border-color: rgba(170, 0, 255, 0.4);
+    color: #00d9ff;
+  }
+}
+
