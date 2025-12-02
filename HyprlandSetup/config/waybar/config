@@ -266,7 +266,7 @@
             "return-type": "json",
             "tooltip": true,
             "interval": 5,
-            "on-click": "blueman-manager"
+            "on-click": "kitty -e bluetui"
         },
         "group/clock": {
             "orientation": "horizontal",
