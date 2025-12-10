@@ -1,4 +1,4 @@
-@define-color background rgba(10, 8, 20, 0.85);
+@define-color background rgba(10, 8, 20, 0.65);
 @define-color text #C8C3FF;
 @define-color accent1 #6A00FF;  /* viola neon */
 @define-color accent2 #00D9FF;  /* azzurro elettrico */
@@ -10,18 +10,12 @@
 
 
 window{
-  /* border-radius: 8px;
-  border: 1px solid ;
-  background-color: @background;
-  color: @text;
-  animation: glowPulse 3s infinite ease-in-out; */
   background: @background;
-  margin: auto;
-  padding: 10px;
   border-radius: 20px;
   border: 3px solid ;
   color: @text;
-  animation: glowPulse 3s infinite ease-in-out;
+  /* transition: all 1s ease-in-out; */
+  animation: glowPulse 2s infinite ease-in-out;
 }
 
 
@@ -43,15 +37,15 @@ window{
 
 @keyframes glowPulseText {
   0% {
-    text-shadow: 0 0 4px @accent2, 0 0 8px @accent2;
+    text-shadow: 0 0 2px currentColor;
   }
 
   50% {
-    text-shadow: 0 0 12px @accent2, 0 0 24px @accent2, 0 0 36px @accent2;
+    text-shadow: 0 0 15px  currentColor;
   }
 
   100% {
-    text-shadow: 0 0 4px @accent2, 0 0 8px @accent2;
+    text-shadow: 0 0 2px  currentColor;
   }
 }
 
@@ -62,24 +56,21 @@ window{
   color: @text;
   padding: 8px 10px;
   font-size: 16px;
-  caret-color: @accent1
 }
 
 #entry {
-  padding: 6px 10px;
-  border-radius: 8px;
+  padding: 8px 10px;
   background: transparent;
   color: @text;
+  transition: color 0.5s ease-in-out;
   background-color: transparent;
 }
 
 #entry:selected {
   background: linear-gradient(90deg, rgba(166, 0, 255, 0.3), rgba(0, 128, 255, 0.3));
-  color: #FFFFFF;
-  /* text-shadow: 0 0 5px @accent2;  */
+  color: rgb(0, 128, 255);
   box-shadow: 0 0 8px rgba(0, 217, 255, 0.4); 
-  transition: all 0.2s ease-in-out;
-  animation: glowPulseText 2s infinite ease-in-out
+  animation: glowPulseText 2s infinite ease-in-out;
 }
 
 /* Titolo e prompt */
@@ -93,20 +84,10 @@ window{
   border-radius: 10px;
 }
 
-/* Scrollbar minimale */
-scrollbar, scrollbar slider {
-  background: transparent;
-  min-width: 8px;
-}
-
-scrollbar slider {
-  background-color: rgba(0, 217, 255, 0.3);
-  border-radius: 4px;
-}
 
 
 #img {
-  margin-right: 6px;
+  margin-right: 10px;
 }
 
 
