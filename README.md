@@ -4,7 +4,7 @@
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/7b52fd8b-0da8-489e-a1cb-08869e5777b2" />
 
 ## Wofi
-<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/eb16780b-7f77-4285-95a5-80f3963705c8" />
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/c4897920-8067-4f79-a369-050fe633d5d1" />
 
 ## Wlogout
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/954fefa1-0e5f-4158-b1a6-424544812ae1" />
