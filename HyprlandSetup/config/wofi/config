@@ -1,0 +1,13 @@
+allow_markup=true
+print_command=true
+allow_images=true
+image_size=18
+key_expand=Tab
+lines=8
+prompt= 
+gtk_dark=true
+hide_scroll=true
+line_wrap=word
+layer=overlay
+width=30%
+height= 50%
